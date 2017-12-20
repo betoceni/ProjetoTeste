@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Projeto.Models.Lanches>
+
+@{
+    ViewBag.Title = "Lista o lanche personalizado";
+}
+
+<h2>Lista o lanche personalizado</h2>
+
+<p>
+    @Html.ActionLink("Voltar", "PersonalizarLanches")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo_Lanche)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lanche)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conteudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_Lanche)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo_Lanche)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lanche)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conteudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_Lanche)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>
