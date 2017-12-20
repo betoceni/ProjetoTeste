@@ -160,6 +160,12 @@ namespace Projeto.Controllers
             return View();
         }
 
+        public ActionResult Voltar()
+        {
+            //return View();
+            return RedirectToAction("Index");
+        }
+
         // GET: Principal
         public ActionResult Ingredientes()
         {
@@ -283,7 +289,10 @@ namespace Projeto.Controllers
             }
 
             //Removendo a última vírgula
-            conteudo_lanche = conteudo_lanche.Substring(0, conteudo_lanche.Length - 2);
+            if (conteudo_lanche != "")
+                conteudo_lanche = conteudo_lanche.Substring(0, conteudo_lanche.Length - 2);
+            else
+                conteudo_lanche = "-";
 
 
             //Promoções
@@ -326,77 +335,5 @@ namespace Projeto.Controllers
             return retorno;
         }
 
-        // GET: Principal/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Principal/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Principal/Edit/5
-        public ActionResult Voltar()
-        {
-            //return View();
-            return RedirectToAction("Index");
-        }
-
-        // GET: Principal/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Principal/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Principal/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Principal/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
