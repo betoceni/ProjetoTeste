@@ -16,9 +16,6 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Codigo_Ingrediente)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Ingrediente)
             </th>
             <th>
@@ -34,25 +31,15 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Codigo_Ingrediente)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Ingrediente)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Valor_Ingrediente)
                 </td>
                 <td>
-                    @*@Html.EditorFor(modelItem => item.Qtde_Ingrediente)
-                        @Html.ValidationMessageFor(modelItem => item.Qtde_Ingrediente, "Erro", new { @class = "text-danger" })*@
                     @Html.TextBoxFor(modelItem => item.Qtde_Ingrediente,
                        new { @type = "number", @class = "span4", @min = "0" })
                 </td>
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>*@
             </tr>
 
         }

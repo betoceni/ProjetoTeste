@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Codigo_Lanche)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Lanche)
         </th>
         <th>
@@ -29,9 +26,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Codigo_Lanche)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Lanche)
         </td>
         <td>
@@ -39,11 +33,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Valor_Lanche)
-        </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
         </td>
     </tr>
 }
